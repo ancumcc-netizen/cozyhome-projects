@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumi Hanoi: Property Management for Foreign Owners | Cozyhome</title>
+    <meta name="description" content="Professional property management for foreign owners at Lumi Hanoi. Handover inspection, furnishing, tenant sourcing, rent collection, and monthly English reports.">
+    <link rel="stylesheet" href="tokens.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--ch-font-body); line-height: 1.6; color: var(--ch-fg); background: var(--ch-bg); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--ch-space-lg); }
+        
+        /* Header */
+        header { background: white; border-bottom: 1px solid var(--ch-border); padding: var(--ch-space-lg) 0; position: sticky; top: 0; z-index: 100; box-shadow: var(--ch-shadow-sm); }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { height: 40px; }
+        nav { display: flex; gap: var(--ch-space-xl); }
+        nav a { color: var(--ch-fg); text-decoration: none; font-weight: 500; transition: color var(--ch-transition-fast); }
+        nav a:hover { color: var(--ch-primary); }
+        
+        /* Hero */
+        .hero { background: var(--ch-secondary); color: var(--ch-fg-on-dark); padding: var(--ch-space-3xl) 0; }
+        .hero h1 { font-family: var(--ch-font-heading); font-size: var(--ch-text-h1); font-weight: 800; margin-bottom: var(--ch-space-lg); line-height: 1.2; }
+        .hero p { font-size: var(--ch-text-lg); margin-bottom: var(--ch-space-xl); max-width: 700px; opacity: 0.95; }
+        
+        /* Info Grid */
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--ch-space-lg); margin: var(--ch-space-3xl) 0; }
+        .info-card { background: var(--ch-card); padding: var(--ch-space-lg); border-radius: var(--ch-radius-lg); border: 1px solid var(--ch-border); box-shadow: var(--ch-shadow-sm); }
+        .info-card-icon { font-size: 32px; margin-bottom: var(--ch-space-md); }
+        .info-card h3 { font-family: var(--ch-font-heading); color: var(--ch-secondary); margin-bottom: var(--ch-space-sm); font-size: var(--ch-text-h3); }
+        .info-card p { color: var(--ch-fg-muted); font-size: var(--ch-text-base); }
+        
+        /* Section */
+        section { padding: var(--ch-space-3xl) 0; }
+        section h2 { font-family: var(--ch-font-heading); font-size: var(--ch-text-h2); color: var(--ch-fg); margin-bottom: var(--ch-space-lg); }
+        section h3 { font-family: var(--ch-font-heading); font-size: var(--ch-text-h3); color: var(--ch-fg); margin: var(--ch-space-xl) 0 var(--ch-space-md); }
+        section p { color: var(--ch-fg-muted); margin-bottom: var(--ch-space-md); font-size: var(--ch-text-base); }
+        section ul, section ol { margin: var(--ch-space-lg) 0 var(--ch-space-lg) var(--ch-space-xl); color: var(--ch-fg-muted); }
+        section li { margin-bottom: var(--ch-space-sm); }
+        
+        /* Feature Grid */
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--ch-space-xl); margin: var(--ch-space-xl) 0; }
+        .feature-card { padding: var(--ch-space-lg); background: var(--ch-bg-muted); border-radius: var(--ch-radius-md); border-left: 4px solid var(--ch-primary); }
+        .feature-card-icon { font-size: 28px; color: var(--ch-primary); margin-bottom: var(--ch-space-md); }
+        .feature-card h4 { font-family: var(--ch-font-heading); color: var(--ch-fg); margin-bottom: var(--ch-space-sm); font-size: var(--ch-text-xl); }
+        .feature-card p { color: var(--ch-fg-muted); font-size: var(--ch-text-sm); }
+        
+        /* FAQ */
+        .faq-item { background: var(--ch-bg-muted); padding: var(--ch-space-lg); margin-bottom: var(--ch-space-md); border-radius: var(--ch-radius-md); border-left: 3px solid var(--ch-secondary); }
+        .faq-item h4 { font-family: var(--ch-font-heading); color: var(--ch-fg); margin-bottom: var(--ch-space-sm); font-size: var(--ch-text-lg); }
+        .faq-item p { color: var(--ch-fg-muted); }
+        
+        /* CTA Section */
+        .cta-section { background: var(--ch-bg-alt); padding: var(--ch-space-3xl) 0; text-align: center; margin: var(--ch-space-3xl) 0; border-radius: var(--ch-radius-lg); }
+        .cta-section h2 { color: var(--ch-secondary); margin-bottom: var(--ch-space-lg); }
+        .cta-section p { font-size: var(--ch-text-lg); color: var(--ch-fg-muted); margin-bottom: var(--ch-space-xl); max-width: 700px; margin-left: auto; margin-right: auto; }
+        
+        /* Footer */
+        footer { background: var(--ch-fg); color: var(--ch-fg-on-dark); padding: var(--ch-space-2xl) 0; text-align: center; }
+        footer a { color: var(--ch-accent); text-decoration: none; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: var(--ch-text-h2); }
+            nav { display: none; }
+            section h2 { font-size: var(--ch-text-h3); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="cozyhome-logo.svg" alt="Cozyhome" class="logo">
+                <nav>
+                    <a href="/services">Services</a>
+                    <a href="/projects">Projects</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Lumi Hanoi: Property Management for Foreign Owners</h1>
+            <p>Professional management for absentee owners at Lumi Hanoi — from handover inspection to tenant sourcing and monthly English reports.</p>
+            <button class="ch-btn-primary">Request Property Management Consultation</button>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-card-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>Tay Mo Ward, Nam Tu Liem District, Western Hanoi</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">🏢</div>
+                    <h3>Developer</h3>
+                    <p>CapitaLand Development, Far East Organization, Mitsubishi Estate</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">🏗️</div>
+                    <h3>Scale</h3>
+                    <p>~4,000 apartments across 9 towers (29-35 floors)</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">📅</div>
+                    <h3>Status</h3>
+                    <p>Under construction / phased handover from 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Why Foreign Owners Choose Lumi Hanoi</h2>
+            <p>For many foreign investors from Hong Kong, Singapore, Taiwan, and Korea, the CapitaLand name provides a level of confidence that is not always available with local developers. CapitaLand's track record in Vietnam and across Asia means buyers have a reference point for expected build quality, handover standards, and project governance.</p>
+            <p>The western Hanoi location, while less established than central districts, is positioned for long-term infrastructure growth. Metro Lines 5, 6, and 7 are planned to improve connectivity to the city centre.</p>
+        </div>
+    </section>
+
+    <section style="background: var(--ch-bg-muted);">
+        <div class="container">
+            <h2>What Foreign Owners at Lumi Hanoi Need</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-card-icon">🔍</div>
+                    <h4>Handover Inspection</h4>
+                    <p>Professional defect inspection before formal acceptance. Identify issues for developer follow-up.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">🛋️</div>
+                    <h4>Renovation & Furnishing</h4>
+                    <p>Contractor coordination, furniture procurement, and quality checks for rental-ready units.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">👥</div>
+                    <h4>Tenant Sourcing</h4>
+                    <p>Marketing, viewings, screening, lease preparation, and move-in coordination.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">💰</div>
+                    <h4>Rent Collection</h4>
+                    <p>On-time rent collection, utility bill processing, and financial tracking.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">📊</div>
+                    <h4>Monthly Reports</h4>
+                    <p>Clear English reports covering rent, expenses, maintenance, and property condition.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">🌐</div>
+                    <h4>Remittance Support</h4>
+                    <p>Coordination for transferring rental income from VND to HKD/SGD/TWD/KRW.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>How Cozyhome Manages Lumi Hanoi Units</h2>
+            <ol>
+                <li>Handover inspection and defect reporting</li>
+                <li>Renovation and furnishing coordination</li>
+                <li>Tenant sourcing and lease setup</li>
+                <li>Move-in coordination and inventory check</li>
+                <li>Monthly rent collection and reporting</li>
+                <li>Maintenance and repair coordination</li>
+                <li>Quarterly property inspections</li>
+            </ol>
+        </div>
+    </section>
+
+    <section style="background: var(--ch-bg-muted);">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h4>Can foreigners buy apartments at Lumi Hanoi?</h4>
+                <p>Lumi Hanoi has been approved for foreign ownership subject to the 30% quota per building. Buyers should verify current quota availability before deposit.</p>
+            </div>
+            <div class="faq-item">
+                <h4>What is the typical rental yield at Lumi Hanoi?</h4>
+                <p>Rental yields in western Hanoi typically range from 2-3% gross annually. Actual yield depends on unit type, furnishing quality, and market timing.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How does Cozyhome charge for property management?</h4>
+                <p>Cozyhome charges a percentage of monthly rent collected, typically 10-15% depending on service scope. Contact us for a detailed quote.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Can Cozyhome help with handover inspection?</h4>
+                <p>Yes. Cozyhome provides professional handover inspection services to identify defects before formal acceptance.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How long does it take to find a tenant?</h4>
+                <p>Tenant sourcing typically takes 2-4 weeks for well-furnished units in good condition, depending on market demand and pricing.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-section">
+        <div class="container">
+            <h2>Ready to Manage Your Lumi Hanoi Apartment?</h2>
+            <p>Own or expect to receive a unit at Lumi Hanoi? Cozyhome can inspect the apartment, coordinate furnishing, find tenants, manage repairs, collect rent, and send monthly English reports while you stay overseas.</p>
+            <button class="ch-btn-primary">Request Property Management Consultation</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Cozyhome. Professional Property Management for Foreign Investors in Hanoi.</p>
+            <p><a href="/contact">Contact Us</a> | <a href="/services">Services</a> | <a href="/blog">Blog</a></p>
+        </div>
+    </footer>
+</body>
+</html>

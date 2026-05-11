@@ -1,0 +1,191 @@
+/**
+ * CozyHome Design System — CSS Custom Properties (Tokens)
+ * Source: cozyhome.com.vn · Built with Pencil.dev
+ * Version: 1.0.0
+ *
+ * Usage in GoClaw React frontend:
+ *   import './tokens.css';
+ *   Then use var(--ch-primary), var(--ch-secondary), etc.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* ─── BRAND COLORS ─────────────────────────────── */
+  --ch-primary:          #FE6005;  /* Orange — CTA buttons, links, highlights */
+  --ch-primary-hover:    #E5550A;  /* Darker orange for hover states */
+  --ch-primary-light:    #FFF0E8;  /* Light tint for backgrounds */
+  --ch-primary-fg:       #FFFFFF;  /* Text on primary */
+
+  --ch-secondary:        #1E40AF;  /* Royal Blue — hero, headers, sections */
+  --ch-secondary-hover:  #1A37A0;  /* Darker blue for hover */
+  --ch-secondary-light:  #EFF3FF;  /* Light tint for backgrounds */
+  --ch-secondary-fg:     #FFFFFF;  /* Text on secondary */
+
+  --ch-accent:           #FFE16A;  /* Gold — highlights, banners, accents */
+  --ch-accent-hover:     #F5D448;  /* Darker gold for hover */
+  --ch-accent-fg:        #222222;  /* Text on accent */
+
+  /* ─── BACKGROUND ───────────────────────────────── */
+  --ch-bg:               #FFFFFF;  /* Main background */
+  --ch-bg-alt:           #FFF8F0;  /* Brand cream — section backgrounds */
+  --ch-bg-dark:          #1E40AF;  /* Blue hero section background */
+  --ch-bg-muted:         #F9F9F9;  /* Subtle grey background */
+
+  /* ─── FOREGROUND / TEXT ─────────────────────────── */
+  --ch-fg:               #222222;  /* Primary text — headings, body */
+  --ch-fg-muted:         #4B4F58;  /* Body text — paragraphs, descriptions */
+  --ch-fg-light:         #808285;  /* Muted text — captions, placeholders */
+  --ch-fg-on-dark:       #FFFFFF;  /* Text on dark/blue backgrounds */
+
+  /* ─── CARD & SURFACE ────────────────────────────── */
+  --ch-card:             #FFFFFF;  /* Card backgrounds */
+  --ch-card-fg:          #222222;  /* Card text */
+
+  /* ─── BORDER ────────────────────────────────────── */
+  --ch-border:           #E6E6E6;  /* Default border */
+  --ch-border-light:     #CCD6DF;  /* Lighter border variant */
+  --ch-input:            #E6E6E6;  /* Input field border */
+
+  /* ─── SEMANTIC COLORS ───────────────────────────── */
+  --ch-success:          #16A34A;
+  --ch-warning:          #F0AD4E;
+  --ch-destructive:      #DC2626;
+  --ch-info:             #1E40AF;
+
+  /* ─── TYPOGRAPHY ─────────────────────────────────  */
+  --ch-font-heading:     'Montserrat', sans-serif;  /* Headings — bold, impact */
+  --ch-font-body:        'Inter', sans-serif;       /* Body & UI — clean, readable */
+
+  --ch-text-display:     56px;   /* Hero / display text */
+  --ch-text-h1:          48px;
+  --ch-text-h2:          32px;
+  --ch-text-h3:          24px;
+  --ch-text-xl:          20px;
+  --ch-text-lg:          18px;
+  --ch-text-base:        16px;
+  --ch-text-sm:          14px;
+  --ch-text-xs:          12px;
+
+  /* ─── BORDER RADIUS ─────────────────────────────── */
+  --ch-radius-sm:        4px;    /* Buttons, inputs, badges */
+  --ch-radius-md:        8px;    /* Panels, form cards */
+  --ch-radius-lg:        16px;   /* Large cards, modals */
+  --ch-radius-pill:      999px;  /* Pills, tags */
+
+  /* ─── SPACING ────────────────────────────────────  */
+  --ch-space-xs:         4px;
+  --ch-space-sm:         8px;
+  --ch-space-md:         16px;
+  --ch-space-lg:         24px;
+  --ch-space-xl:         32px;
+  --ch-space-2xl:        48px;
+  --ch-space-3xl:        64px;
+
+  /* ─── SHADOWS ────────────────────────────────────  */
+  --ch-shadow-sm:        0 1px 3px rgba(0, 0, 0, 0.08);
+  --ch-shadow-md:        0 4px 12px rgba(0, 0, 0, 0.1);
+  --ch-shadow-lg:        0 8px 24px rgba(0, 0, 0, 0.12);
+  --ch-shadow-primary:   0 4px 14px rgba(254, 96, 5, 0.35);
+  --ch-shadow-blue:      0 4px 14px rgba(30, 64, 175, 0.3);
+
+  /* ─── TRANSITIONS ─────────────────────────────── */
+  --ch-transition-fast:  150ms ease;
+  --ch-transition-base:  250ms ease;
+  --ch-transition-slow:  400ms ease;
+}
+
+/* ─── UTILITY CLASSES ─────────────────────────────────── */
+
+/* Buttons */
+.ch-btn-primary {
+  background-color: var(--ch-primary);
+  color: var(--ch-primary-fg);
+  font-family: var(--ch-font-heading);
+  font-weight: 700;
+  font-size: var(--ch-text-sm);
+  padding: 14px 32px;
+  border-radius: var(--ch-radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--ch-transition-fast), box-shadow var(--ch-transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.ch-btn-primary:hover {
+  background-color: var(--ch-primary-hover);
+  box-shadow: var(--ch-shadow-primary);
+}
+
+.ch-btn-secondary {
+  background-color: var(--ch-secondary);
+  color: var(--ch-secondary-fg);
+  font-family: var(--ch-font-heading);
+  font-weight: 700;
+  font-size: var(--ch-text-sm);
+  padding: 14px 32px;
+  border-radius: var(--ch-radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--ch-transition-fast), box-shadow var(--ch-transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.ch-btn-secondary:hover {
+  background-color: var(--ch-secondary-hover);
+  box-shadow: var(--ch-shadow-blue);
+}
+
+.ch-btn-outline-primary {
+  background-color: transparent;
+  color: var(--ch-primary);
+  border: 2px solid var(--ch-primary);
+  font-family: var(--ch-font-heading);
+  font-weight: 600;
+  font-size: var(--ch-text-sm);
+  padding: 12px 28px;
+  border-radius: var(--ch-radius-sm);
+  cursor: pointer;
+  transition: all var(--ch-transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.ch-btn-outline-primary:hover {
+  background-color: var(--ch-primary);
+  color: var(--ch-primary-fg);
+}
+
+/* Cards */
+.ch-card {
+  background: var(--ch-card);
+  border: 1px solid var(--ch-border);
+  border-radius: var(--ch-radius-lg);
+  padding: var(--ch-space-lg);
+  box-shadow: var(--ch-shadow-sm);
+}
+
+/* Badge / Tag */
+.ch-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--ch-radius-pill);
+  font-size: var(--ch-text-xs);
+  font-weight: 600;
+  font-family: var(--ch-font-body);
+}
+.ch-badge-primary { background: var(--ch-primary-light); color: var(--ch-primary); }
+.ch-badge-secondary { background: var(--ch-secondary-light); color: var(--ch-secondary); }
+.ch-badge-accent { background: var(--ch-accent); color: var(--ch-accent-fg); }
+
+/* Hero Section */
+.ch-hero {
+  background-color: var(--ch-secondary);
+  color: var(--ch-fg-on-dark);
+  font-family: var(--ch-font-heading);
+}
+
+/* Section - Cream bg */
+.ch-section-cream {
+  background-color: var(--ch-bg-alt);
+}
